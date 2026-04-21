@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="NLP Papers">
+  <rect width="64" height="64" rx="14" fill="#132423"/>
+  <path d="M16 18h20c7.732 0 14 6.268 14 14v14H30c-7.732 0-14-6.268-14-14V18Z" fill="#f4ead5"/>
+  <path d="M22 24h16M22 30h16M22 36h11" stroke="#132423" stroke-linecap="round" stroke-width="3"/>
+</svg>

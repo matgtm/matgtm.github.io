@@ -1,0 +1,205 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { TOPICS, TOPIC_LABELS } from "../lib/topics";
+
+const papers = (await getCollection("papers")).sort((a, b) => {
+  const topicA = TOPIC_LABELS[a.data.topic]?.index ?? 0;
+  const topicB = TOPIC_LABELS[b.data.topic]?.index ?? 0;
+  if (topicA !== topicB) return topicA - topicB;
+  return a.data.year - b.data.year || a.data.title.localeCompare(b.data.title);
+});
+
+const grouped = TOPICS.map((topic) => ({
+  ...topic,
+  papers: papers.filter((paper) => paper.data.topic === topic.id)
+}));
+
+const totalPapers = papers.length;
+---
+
+<BaseLayout title="Papers Fundamentales de NLP">
+  <main class="page">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">matgtm.github.io</p>
+        <h1>Papers fundamentales de NLP, ordenados para estudiar.</h1>
+        <p class="hero-text">
+          Una biblioteca personal para preparar el parcial, mantener un archivo propio y completar
+          fichas de lectura paper por paper sin perder el mapa general del campo.
+        </p>
+      </div>
+
+      <aside class="hero-panel">
+        <p class="hero-kicker">Primera iteracion</p>
+        <dl class="hero-stats">
+          <div>
+            <dt>Papers</dt>
+            <dd>{totalPapers}</dd>
+          </div>
+          <div>
+            <dt>Temas</dt>
+            <dd>{TOPICS.length}</dd>
+          </div>
+          <div>
+            <dt>Estado</dt>
+            <dd>Todo en pendiente</dd>
+          </div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="controls">
+      <div class="control-grid">
+        <label class="control">
+          <span>Buscar</span>
+          <input id="search-input" type="search" placeholder="Titulo, keyword o tema" />
+        </label>
+
+        <label class="control">
+          <span>Estado</span>
+          <select id="status-filter">
+            <option value="">Todos</option>
+            <option value="pendiente">Pendiente</option>
+            <option value="en progreso">En progreso</option>
+            <option value="listo">Listo</option>
+          </select>
+        </label>
+
+        <label class="control">
+          <span>Tema</span>
+          <select id="topic-filter">
+            <option value="">Todos</option>
+            {TOPICS.map((topic) => <option value={topic.id}>{topic.shortLabel}</option>)}
+          </select>
+        </label>
+      </div>
+
+      <nav class="topic-nav" aria-label="Navegacion rapida por tema">
+        {TOPICS.map((topic) => (
+          <a href={`#${topic.id}`} class="topic-pill">
+            {topic.shortLabel}
+          </a>
+        ))}
+      </nav>
+
+      <p id="empty-state" class="empty-state" hidden>
+        No hay papers que coincidan con los filtros actuales.
+      </p>
+    </section>
+
+    <section class="topic-sections">
+      {grouped.map((topic) => (
+        <section id={topic.id} class="topic-card" data-topic-section>
+          <header class="topic-header">
+            <div>
+              <p class="topic-eyebrow">{topic.papers.length} papers</p>
+              <h2>{topic.label}</h2>
+            </div>
+            <p>{topic.description}</p>
+          </header>
+
+          <div class="table-shell">
+            <table>
+              <thead>
+                <tr>
+                  <th>Paper</th>
+                  <th>Anio</th>
+                  <th>Fuente</th>
+                  <th>Estado</th>
+                  <th>Pagina</th>
+                </tr>
+              </thead>
+              <tbody>
+                {topic.papers.map((paper) => (
+                  <tr
+                    class="paper-row"
+                    data-topic={paper.data.topic}
+                    data-status={paper.data.status}
+                    data-title={paper.data.title}
+                    data-keywords={paper.data.keywords.join(" ")}
+                    data-topic-label={topic.label}
+                  >
+                    <td>
+                      <div class="paper-title-wrap">
+                        <a class="paper-link" href={`/papers/${paper.slug}/`}>
+                          {paper.data.title}
+                        </a>
+                        <p>{paper.data.authors}</p>
+                      </div>
+                    </td>
+                    <td>{paper.data.year}</td>
+                    <td>
+                      <a href={paper.data.sourceUrl} target="_blank" rel="noreferrer">
+                        Ir al paper
+                      </a>
+                    </td>
+                    <td>
+                      <span class={`status-badge status-${paper.data.status.replace(" ", "-")}`}>
+                        {paper.data.status}
+                      </span>
+                    </td>
+                    <td>
+                      <a href={`/papers/${paper.slug}/`}>Abrir ficha</a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+      ))}
+    </section>
+  </main>
+
+  <script is:inline>
+    const normalize = (value) =>
+      value
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/\p{Diacritic}/gu, "")
+        .trim();
+
+    const searchInput = document.querySelector("#search-input");
+    const statusFilter = document.querySelector("#status-filter");
+    const topicFilter = document.querySelector("#topic-filter");
+    const rows = [...document.querySelectorAll(".paper-row")];
+    const sections = [...document.querySelectorAll("[data-topic-section]")];
+    const emptyState = document.querySelector("#empty-state");
+
+    const applyFilters = () => {
+      const query = normalize(searchInput?.value ?? "");
+      const status = statusFilter?.value ?? "";
+      const topic = topicFilter?.value ?? "";
+
+      let visibleCount = 0;
+
+      rows.forEach((row) => {
+        const haystack = normalize(
+          [row.dataset.title, row.dataset.keywords, row.dataset.topicLabel].filter(Boolean).join(" ")
+        );
+        const matchesQuery = !query || haystack.includes(query);
+        const matchesStatus = !status || row.dataset.status === status;
+        const matchesTopic = !topic || row.dataset.topic === topic;
+        const visible = matchesQuery && matchesStatus && matchesTopic;
+
+        row.toggleAttribute("hidden", !visible);
+        if (visible) visibleCount += 1;
+      });
+
+      sections.forEach((section) => {
+        const visibleRows = section.querySelectorAll(".paper-row:not([hidden])").length;
+        section.toggleAttribute("hidden", visibleRows === 0);
+      });
+
+      emptyState?.toggleAttribute("hidden", visibleCount !== 0);
+    };
+
+    [searchInput, statusFilter, topicFilter].forEach((node) =>
+      node?.addEventListener("input", applyFilters)
+    );
+    [statusFilter, topicFilter].forEach((node) =>
+      node?.addEventListener("change", applyFilters)
+    );
+  </script>
+</BaseLayout>

@@ -1,0 +1,29 @@
+---
+import "../styles/global.css";
+
+type Props = {
+  title: string;
+  description?: string;
+};
+
+const {
+  title,
+  description = "Resumenes y fichas de papers fundamentales de NLP para estudiar y mantener un archivo personal."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <slot />
+    </div>
+  </body>
+</html>

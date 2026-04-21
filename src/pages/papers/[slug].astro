@@ -1,0 +1,58 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { TOPIC_LABELS } from "../../lib/topics";
+
+export async function getStaticPaths() {
+  const papers = await getCollection("papers");
+
+  return papers.map((paper) => ({
+    params: { slug: paper.slug },
+    props: { paper }
+  }));
+}
+
+const { paper } = Astro.props;
+const { Content } = await render(paper);
+const topic = TOPIC_LABELS[paper.data.topic];
+---
+
+<BaseLayout title={`${paper.data.title} | Papers Fundamentales de NLP`}>
+  <main class="paper-page">
+    <a class="back-link" href="/">← Volver al mapa de papers</a>
+
+    <section class="paper-hero">
+      <div class="paper-hero-copy">
+        <p class="eyebrow">{topic?.label}</p>
+        <h1>{paper.data.title}</h1>
+        <p class="paper-hero-text">{paper.data.authors}</p>
+      </div>
+
+      <aside class="paper-meta">
+        <div>
+          <span>Venue</span>
+          <strong>{paper.data.venue}</strong>
+        </div>
+        <div>
+          <span>Anio</span>
+          <strong>{paper.data.year}</strong>
+        </div>
+        <div>
+          <span>Estado</span>
+          <strong>{paper.data.status}</strong>
+        </div>
+        <div>
+          <span>Keywords</span>
+          <strong>{paper.data.keywords.join(", ")}</strong>
+        </div>
+        <a class="source-button" href={paper.data.sourceUrl} target="_blank" rel="noreferrer">
+          Abrir paper original
+        </a>
+      </aside>
+    </section>
+
+    <article class="paper-content prose">
+      <Content />
+    </article>
+  </main>
+</BaseLayout>

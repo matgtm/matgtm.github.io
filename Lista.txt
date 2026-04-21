@@ -1,0 +1,79 @@
+Sí. Te dejo una lista final amplia, ordenada por árbol, con palabra clave y una descripción de 1 línea para que después borres lo que no quieras. No incluyo Attention is not Explanation, como pediste.
+1) NLP clásico / antes de deep learning
+	1	Brown et al. (1992) — Class-Based n-gram Models of Natural Language n-grams. Modelado clásico del lenguaje con probabilidades sobre secuencias; sirve como contexto histórico.
+	2	Chen & Goodman (1999) — An Empirical Study of Smoothing Techniques for Language Modeling smoothing. Paper importante para entender cómo se corregían los problemas de sparsity en language modeling clásico.
+	3	Lafferty, McCallum, Pereira (2001) — Conditional Random Fields CRF. Modelo probabilístico clave para sequence labeling en NLP clásico.
+	4	Papineni et al. (2002) — BLEU: a Method for Automatic Evaluation of Machine Translation BLEU. Métrica histórica de evaluación para traducción automática.
+
+2) Representaciones distribucionales / embeddings
+	5	Mikolov et al. (2013) — Efficient Estimation of Word Representations in Vector Space word2vec. El paper clásico de skip-gram/CBOW; palabras como vectores densos.
+	6	Pennington, Socher, Manning (2014) — GloVe: Global Vectors for Word Representation GloVe. Embeddings estáticos basados en co-ocurrencias globales.
+	7	Levy & Goldberg (2014) — Neural Word Embedding as Implicit Matrix Factorization word2vec ≈ matrix factorization. Muy útil para entender qué está haciendo word2vec “por debajo”.
+
+3) RNN / LSTM / secuencias
+	8	Mikolov et al. (2010) — Recurrent Neural Network Based Language Model RNN LM. Aplicación importante de RNNs al modelado de lenguaje.
+	9	Hochreiter & Schmidhuber (1997) — Long Short-Term Memory LSTM. El paper fundacional de LSTM; memoria para dependencias largas. (arXiv)
+	10	Collobert et al. (2011) — Natural Language Processing (Almost) from Scratch deep NLP temprano. Una transición importante desde features manuales hacia redes neuronales.
+	11	Sutskever, Vinyals, Le (2014) — Sequence to Sequence Learning with Neural Networks seq2seq. El encoder-decoder moderno previo al Transformer.
+	12	Bahdanau, Cho, Bengio (2014) — Neural Machine Translation by Jointly Learning to Align and Translate attention. Introduce atención para evitar comprimir toda la secuencia en un solo vector.
+
+4) Tokenización / subwords
+	13	Sennrich, Haddow, Birch (2016) — Neural Machine Translation of Rare Words with Subword Units BPE / subwords. Fundamental para entender tokenización moderna y rare words.
+
+5) Transformer y embeddings contextuales
+	14	Vaswani et al. (2017) — Attention Is All You Need Transformer. Paper bisagra: arquitectura basada solo en atención, sin recurrencia ni convoluciones. (arXiv)
+	15	Peters et al. (2018) — Deep Contextualized Word Representations ELMo. El gran paso desde embeddings estáticos a contextuales.
+	16	Howard & Ruder (2018) — Universal Language Model Fine-tuning for Text Classification ULMFiT. Muy importante para el esquema pretraining + fine-tuning.
+	17	Devlin et al. (2018) — BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding BERT. Transformer bidireccional con masked language modeling.
+
+6) GPT / LLMs modernos
+	18	Radford et al. (2018) — Improving Language Understanding by Generative Pre-Training GPT-1. Consolida la idea de pretrain + fine-tune del lado generativo.
+	19	Radford et al. (2019) — Language Models are Unsupervised Multitask Learners GPT-2. Escalado autoregresivo y señales claras de zero-shot/multitask sin fine-tuning específico.
+	20	Brown et al. (2020) — Language Models are Few-Shot Learners GPT-3 / few-shot. Paper central para in-context learning y few-shot prompting. (arXiv)
+
+7) Fine-tuning / instruction tuning / alignment
+	21	Wei et al. (2021) — Finetuned Language Models Are Zero-Shot Learners FLAN. Paper central de instruction tuning: entrenar con instrucciones mejora zero-shot.
+	22	Ouyang et al. (2022) — Training language models to follow instructions with human feedback InstructGPT / RLHF. El paper clave de RLHF en LLMs: SFT, reward model y RL para alinear el modelo con preferencias humanas. (arXiv)
+	23	Wang et al. (2022) — Self-Instruct: Aligning Language Models with Self-Generated Instructions Self-Instruct. Cómo escalar instruction tuning con datos sintéticos generados por el propio modelo.
+	24	Hu et al. (2021) — LoRA: Low-Rank Adaptation of Large Language Models LoRA / PEFT. Fine-tuning eficiente con pocas matrices entrenables.
+	25	Rafailov et al. (2023) — Direct Preference Optimization: Your Language Model is Secretly a Reward Model DPO. Alternativa a RLHF clásico: optimiza preferencias directamente, sin reward model + RL explícito. (arXiv)
+	26	Schulman et al. (2017) — Proximal Policy Optimization Algorithms PPO. El algoritmo de RL general que luego se usa en pipelines RLHF como InstructGPT. (arXiv)
+
+8) Reasoning / prompting
+	27	Wei et al. (2022) — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models CoT. Paper emblemático de reasoning paso a paso vía prompting.
+	28	Kojima et al. (2022) — Large Language Models are Zero-Shot Reasoners zero-shot CoT. Famoso por mostrar el efecto de prompts tipo “let’s think step by step”.
+	29	Wang et al. (2022) — Self-Consistency Improves Chain of Thought Reasoning in Language Models self-consistency. Varias cadenas de razonamiento y agregación de respuestas.
+	30	Yao et al. (2022) — ReAct: Synergizing Reasoning and Acting in Language Models ReAct. Combina razonamiento con uso de herramientas/acciones.
+	31	Yao et al. (2023) — Tree of Thoughts: Deliberate Problem Solving with Large Language Models ToT. Extiende CoT a exploración ramificada de trayectorias de razonamiento.
+
+9) Interpretabilidad / semántica
+	32	Geva et al. (2021) — Transformer Feed-Forward Layers Are Key-Value Memories FFN as memory. Muy importante para mechanistic interpretability en Transformers.
+	33	James Simon (2024) — Language Models Implement Simple Word2Vec-Style Vector Arithmetic vector arithmetic. Interesante para conectar semántica distribucional clásica con LLMs.
+
+Si querés una versión más podada
+Núcleo mínimo serio
+Si después querés dejar una lista fuerte pero no absurda de larga, yo conservaría estos:
+	•	word2vec
+	•	LSTM
+	•	seq2seq
+	•	Bahdanau attention
+	•	BPE
+	•	Transformer
+	•	ELMo
+	•	BERT
+	•	GPT-1
+	•	GPT-2
+	•	GPT-3 / Few-shot
+	•	FLAN
+	•	InstructGPT / RLHF
+	•	LoRA
+	•	DPO
+	•	CoT
+	•	ReAct
+Mi recomendación honesta
+No leería esto como un maratón cronológico completo. Lo más inteligente para vos sería:
+	•	primero arquitecturas,
+	•	después LLMs y alignment,
+	•	después reasoning,
+	•	y dejar clásicos viejos como contexto cuando te sirvan.
+Si querés, el próximo paso útil es que te la convierta en una tabla con prioridad Alta / Media / Baja, así te queda lista para decidir qué sacar.

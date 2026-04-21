@@ -1,0 +1,16 @@
+{
+  "name": "matgtm.github.io",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "seed": "node ./scripts/seed-papers.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.7.5"
+  }
+}
