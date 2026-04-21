@@ -30,9 +30,10 @@ npm run dev
 - `core`: `true` muestra la marca visual `Clave`.
 - `memoryCue`: frase corta que aparece debajo del titulo en las tablas.
 
-Ejemplo para una ficha donde vos escribiste las primeras secciones y Codex completo el resto:
+Ejemplo para `word2vec`: si vos escribiste `Resumen` y `Que aporta`, pero Codex completo el resto, la ficha se marca asi:
 
 ```yaml
+status: "leido"
 sectionAuthors:
   resumen: humano
   que-aporta: humano

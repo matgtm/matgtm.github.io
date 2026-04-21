@@ -30,6 +30,8 @@ const AUTHOR_LABELS = {
 };
 
 const toClassName = (value: string) => value.replaceAll(" ", "-");
+const toVoiceClass = (value: "humano" | "codex" | "mixto") =>
+  value === "humano" ? "voice-human" : `voice-${toClassName(value)}`;
 const sectionAuthors = paper.data.sectionAuthors;
 ---
 
@@ -88,29 +90,39 @@ const sectionAuthors = paper.data.sectionAuthors;
     </section>
 
     <section class="paper-voice-key" aria-label="Codigo de autoria por seccion">
+      <div class="voice-key-intro">
+        <p class="eyebrow">Codigo de autoria</p>
+        <h2>El color de cada seccion indica quien la escribio.</h2>
+      </div>
       <div class="voice-key-item voice-human">
         <span>Humano</span>
-        <p>Secciones escritas por Matias: tono organico, lectura propia y color verde suave.</p>
+        <p>Verde y tono mas organico: secciones escritas por Matias, con lectura propia.</p>
       </div>
       <div class="voice-key-item voice-codex">
         <span>Codex</span>
-        <p>Secciones escritas por Codex: tono mas mecanico, fuente robotica y azul suave.</p>
+        <p>Azul y fuente robotica: secciones escritas por Codex, faciles de auditar aparte.</p>
       </div>
       <div class="voice-key-item voice-mixto">
         <span>Mixto</span>
-        <p>Secciones intervenidas por ambos: sirven para marcar revision o reescritura compartida.</p>
+        <p>Gradiente compartido: secciones editadas o reescritas entre los dos.</p>
       </div>
     </section>
 
     <article
       id="paper-content"
-      class:list={["paper-content", "prose", paper.data.writtenBy && `voice-${toClassName(paper.data.writtenBy)}`]}
+      class:list={["paper-content", "prose", paper.data.writtenBy && toVoiceClass(paper.data.writtenBy)]}
     >
       <Content />
     </article>
   </main>
 
   <script define:vars={{ sectionAuthors }}>
+    const voiceClasses = {
+      humano: "voice-human",
+      codex: "voice-codex",
+      mixto: "voice-mixto"
+    };
+
     const normalizeHeading = (value) =>
       value
         .toLowerCase()
@@ -129,7 +141,7 @@ const sectionAuthors = paper.data.sectionAuthors;
         if (!voice) return;
 
         const wrapper = document.createElement("section");
-        wrapper.className = `voice-section voice-${voice.replaceAll(" ", "-")}`;
+        wrapper.className = `voice-section ${voiceClasses[voice] ?? "voice-mixto"}`;
         wrapper.dataset.voice = voice;
         heading.before(wrapper);
 
