@@ -1,39 +1,38 @@
 ---
 title: "Finetuned Language Models Are Zero-Shot Learners"
-slug: "finetuned-language-models-are-zero-shot-learners"
 topic: "fine-tuning-instruction-tuning-alignment"
 year: 2021
 authors: "Jason Wei et al."
 venue: "ICLR 2022"
 sourceUrl: "https://openreview.net/forum?id=gEZrGCozdqR"
-status: "pendiente"
+status: "no leido"
 memoryCue: "FLAN: instruction tuning para mejorar zero-shot."
 core: true
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "FLAN"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

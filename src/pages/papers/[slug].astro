@@ -17,20 +17,20 @@ const { Content } = await render(paper);
 const topic = TOPIC_LABELS[paper.data.topic];
 
 const STATUS_LABELS = {
-  pendiente: "Pendiente",
+  "no leido": "No leido",
   "en progreso": "En progreso",
   leido: "Leido",
   listo: "Ficha lista"
 };
 
 const AUTHOR_LABELS = {
-  "sin completar": "Sin completar",
   humano: "Humano",
   codex: "Codex",
   mixto: "Mixto"
 };
 
 const toClassName = (value: string) => value.replaceAll(" ", "-");
+const sectionAuthors = paper.data.sectionAuthors;
 ---
 
 <BaseLayout title={`${paper.data.title} | Papers Fundamentales de NLP`}>
@@ -40,14 +40,18 @@ const toClassName = (value: string) => value.replaceAll(" ", "-");
     <section class="paper-hero">
       <div class="paper-hero-copy">
         <p class="eyebrow">{topic?.label}</p>
-        <h1>{paper.data.title}</h1>
+        <h1>
+          {paper.data.core && <span class="key-dot key-dot-title" title="Clave" aria-label="Clave"></span>}
+          {paper.data.title}
+        </h1>
         <p class="paper-hero-text">{paper.data.memoryCue}</p>
-        <div class="paper-flags">
-          {paper.data.core && <span class="core-chip">Nucleo posta</span>}
+        {paper.data.writtenBy && (
+          <div class="paper-flags">
           <span class={`author-chip author-${toClassName(paper.data.writtenBy)}`}>
             {AUTHOR_LABELS[paper.data.writtenBy]}
           </span>
-        </div>
+          </div>
+        )}
       </div>
 
       <aside class="paper-meta">
@@ -67,10 +71,12 @@ const toClassName = (value: string) => value.replaceAll(" ", "-");
           <span>Autores</span>
           <strong>{paper.data.authors}</strong>
         </div>
-        <div>
-          <span>Autoria de la ficha</span>
-          <strong>{AUTHOR_LABELS[paper.data.writtenBy]}</strong>
-        </div>
+        {paper.data.writtenBy && (
+          <div>
+            <span>Autoria de la ficha</span>
+            <strong>{AUTHOR_LABELS[paper.data.writtenBy]}</strong>
+          </div>
+        )}
         <div>
           <span>Keywords</span>
           <strong>{paper.data.keywords.join(", ")}</strong>
@@ -81,8 +87,64 @@ const toClassName = (value: string) => value.replaceAll(" ", "-");
       </aside>
     </section>
 
-    <article class="paper-content prose">
+    <section class="paper-voice-key" aria-label="Codigo de autoria por seccion">
+      <div class="voice-key-item voice-human">
+        <span>Humano</span>
+        <p>Secciones escritas por Matias: tono organico, lectura propia y color verde suave.</p>
+      </div>
+      <div class="voice-key-item voice-codex">
+        <span>Codex</span>
+        <p>Secciones escritas por Codex: tono mas mecanico, fuente robotica y azul suave.</p>
+      </div>
+      <div class="voice-key-item voice-mixto">
+        <span>Mixto</span>
+        <p>Secciones intervenidas por ambos: sirven para marcar revision o reescritura compartida.</p>
+      </div>
+    </section>
+
+    <article
+      id="paper-content"
+      class:list={["paper-content", "prose", paper.data.writtenBy && `voice-${toClassName(paper.data.writtenBy)}`]}
+    >
       <Content />
     </article>
   </main>
+
+  <script define:vars={{ sectionAuthors }}>
+    const normalizeHeading = (value) =>
+      value
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/\p{Diacritic}/gu, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "");
+
+    const content = document.querySelector("#paper-content");
+
+    if (content && sectionAuthors && Object.keys(sectionAuthors).length > 0) {
+      const headings = [...content.querySelectorAll("h2")];
+
+      headings.forEach((heading) => {
+        const voice = sectionAuthors[normalizeHeading(heading.textContent ?? "")];
+        if (!voice) return;
+
+        const wrapper = document.createElement("section");
+        wrapper.className = `voice-section voice-${voice.replaceAll(" ", "-")}`;
+        wrapper.dataset.voice = voice;
+        heading.before(wrapper);
+
+        const badge = document.createElement("span");
+        badge.className = `voice-badge author-${voice.replaceAll(" ", "-")}`;
+        badge.textContent = voice === "codex" ? "Codex" : voice === "mixto" ? "Mixto" : "Humano";
+        wrapper.appendChild(badge);
+
+        let node = heading;
+        while (node && !(node !== heading && node.nodeType === Node.ELEMENT_NODE && node.matches("h2"))) {
+          const next = node.nextSibling;
+          wrapper.appendChild(node);
+          node = next;
+        }
+      });
+    }
+  </script>
 </BaseLayout>

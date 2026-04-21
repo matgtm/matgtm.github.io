@@ -1,39 +1,38 @@
 ---
 title: "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models"
-slug: "chain-of-thought-prompting-elicits-reasoning-in-large-language-models"
 topic: "reasoning-prompting"
 year: 2022
 authors: "Jason Wei et al."
 venue: "NeurIPS 2022"
 sourceUrl: "https://arxiv.org/abs/2201.11903"
-status: "pendiente"
+status: "no leido"
 memoryCue: "CoT: pedir razonamiento paso a paso cambia el rendimiento."
 core: true
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "CoT"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

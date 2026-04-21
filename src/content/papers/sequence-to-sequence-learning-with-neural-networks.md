@@ -1,39 +1,38 @@
 ---
 title: "Sequence to Sequence Learning with Neural Networks"
-slug: "sequence-to-sequence-learning-with-neural-networks"
 topic: "rnn-lstm-secuencias"
 year: 2014
 authors: "Ilya Sutskever, Oriol Vinyals, Quoc V. Le"
 venue: "NeurIPS 2014"
 sourceUrl: "https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural"
-status: "pendiente"
+status: "no leido"
 memoryCue: "Encoder-decoder con LSTM para mapear secuencias a secuencias."
 core: true
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "seq2seq"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

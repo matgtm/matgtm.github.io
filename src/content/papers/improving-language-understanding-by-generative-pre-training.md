@@ -1,39 +1,38 @@
 ---
 title: "Improving Language Understanding by Generative Pre-Training"
-slug: "improving-language-understanding-by-generative-pre-training"
 topic: "gpt-llms-modernos"
 year: 2018
 authors: "Alec Radford, Karthik Narasimhan, Tim Salimans, Ilya Sutskever"
 venue: "OpenAI Technical Report, 2018"
 sourceUrl: "https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf"
-status: "pendiente"
+status: "no leido"
 memoryCue: "GPT-1: pretrain generativo y fine-tuning supervisado."
 core: true
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "GPT-1"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

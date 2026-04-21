@@ -8,10 +8,11 @@ const papers = defineCollection({
     authors: z.string(),
     venue: z.string(),
     sourceUrl: z.string().url(),
-    status: z.enum(["pendiente", "en progreso", "leido", "listo"]),
+    status: z.enum(["no leido", "en progreso", "leido", "listo"]),
     memoryCue: z.string(),
     core: z.boolean().default(false),
-    writtenBy: z.enum(["sin completar", "humano", "codex", "mixto"]).default("sin completar"),
+    writtenBy: z.enum(["humano", "codex", "mixto"]).optional(),
+    sectionAuthors: z.record(z.enum(["humano", "codex", "mixto"])).default({}),
     keywords: z.array(z.string()).default([])
   })
 });

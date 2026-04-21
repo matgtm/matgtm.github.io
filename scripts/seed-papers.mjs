@@ -316,7 +316,7 @@ const escapeYaml = (value) => `"${value.replaceAll('"', '\\"')}"`;
 const renderBody = () =>
   SECTION_TITLES.map(
     (section) =>
-      `## ${section}\n\nPendiente de completar.\n`
+      `## ${section}\n\nCompletar esta seccion.\n`
   ).join("\n");
 
 const parseList = (rawText) => {
@@ -359,10 +359,9 @@ const parseList = (rawText) => {
       authors: metadata.authors,
       venue: metadata.venue,
       sourceUrl: metadata.sourceUrl,
-      status: "pendiente",
+      status: "no leido",
       memoryCue: MEMORY_CUES[title],
       core: CORE_TITLES.has(title),
-      writtenBy: "sin completar",
       keywords: extractKeyword(description)
     });
   }
@@ -376,15 +375,13 @@ const renderFrontmatter = (paper) => {
       ? "[]"
       : `\n${paper.keywords.map((keyword) => `  - ${escapeYaml(keyword)}`).join("\n")}`;
 
-  return `---\ntitle: ${escapeYaml(paper.title)}\nslug: ${escapeYaml(
-    paper.slug
-  )}\ntopic: ${escapeYaml(paper.topic)}\nyear: ${paper.year}\nauthors: ${escapeYaml(
+  return `---\ntitle: ${escapeYaml(paper.title)}\ntopic: ${escapeYaml(paper.topic)}\nyear: ${paper.year}\nauthors: ${escapeYaml(
     paper.authors
   )}\nvenue: ${escapeYaml(paper.venue)}\nsourceUrl: ${escapeYaml(
     paper.sourceUrl
   )}\nstatus: ${escapeYaml(paper.status)}\nmemoryCue: ${escapeYaml(
     paper.memoryCue
-  )}\ncore: ${paper.core}\nwrittenBy: ${escapeYaml(paper.writtenBy)}\nkeywords:${keywords}\n---\n`;
+  )}\ncore: ${paper.core}\nsectionAuthors: {}\nkeywords:${keywords}\n---\n`;
 };
 
 const source = await import("node:fs/promises").then(({ readFile }) => readFile(SOURCE_FILE, "utf8"));

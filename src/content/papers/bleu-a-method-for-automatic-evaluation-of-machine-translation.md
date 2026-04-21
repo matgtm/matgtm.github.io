@@ -1,39 +1,38 @@
 ---
 title: "BLEU: a Method for Automatic Evaluation of Machine Translation"
-slug: "bleu-a-method-for-automatic-evaluation-of-machine-translation"
 topic: "nlp-clasico-antes-de-deep-learning"
 year: 2002
 authors: "Kishore Papineni, Salim Roukos, Todd Ward, Wei-Jing Zhu"
 venue: "ACL 2002"
 sourceUrl: "https://aclanthology.org/P02-1040/"
-status: "pendiente"
+status: "no leido"
 memoryCue: "La metrica historica que automatiza evaluacion de traduccion."
 core: false
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "BLEU"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

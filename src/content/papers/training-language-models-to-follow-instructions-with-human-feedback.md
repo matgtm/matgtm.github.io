@@ -1,15 +1,14 @@
 ---
 title: "Training language models to follow instructions with human feedback"
-slug: "training-language-models-to-follow-instructions-with-human-feedback"
 topic: "fine-tuning-instruction-tuning-alignment"
 year: 2022
 authors: "Long Ouyang et al."
 venue: "arXiv 2022"
 sourceUrl: "https://arxiv.org/abs/2203.02155"
-status: "pendiente"
+status: "no leido"
 memoryCue: "InstructGPT/RLHF: preferencias humanas para seguir instrucciones."
 core: true
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "InstructGPT"
   - "RLHF"
@@ -17,24 +16,24 @@ keywords:
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

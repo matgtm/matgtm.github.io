@@ -1,39 +1,38 @@
 ---
 title: "Class-Based n-gram Models of Natural Language"
-slug: "class-based-n-gram-models-of-natural-language"
 topic: "nlp-clasico-antes-de-deep-learning"
 year: 1992
 authors: "Peter F. Brown, Vincent J. Della Pietra, Peter V. deSouza, Jenifer C. Lai, Robert L. Mercer"
 venue: "Computational Linguistics, 1992"
 sourceUrl: "https://aclanthology.org/J92-4003/"
-status: "pendiente"
+status: "no leido"
 memoryCue: "Clustering de palabras para hacer n-grams menos esparsos."
 core: false
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "n-grams"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

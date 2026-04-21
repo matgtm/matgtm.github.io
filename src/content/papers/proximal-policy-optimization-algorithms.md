@@ -1,39 +1,38 @@
 ---
 title: "Proximal Policy Optimization Algorithms"
-slug: "proximal-policy-optimization-algorithms"
 topic: "fine-tuning-instruction-tuning-alignment"
 year: 2017
 authors: "John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, Oleg Klimov"
 venue: "arXiv 2017"
 sourceUrl: "https://arxiv.org/abs/1707.06347"
-status: "pendiente"
+status: "no leido"
 memoryCue: "PPO: algoritmo de RL usado como pieza en pipelines RLHF."
 core: false
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "PPO"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

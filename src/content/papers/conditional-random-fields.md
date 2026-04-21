@@ -1,39 +1,38 @@
 ---
 title: "Conditional Random Fields"
-slug: "conditional-random-fields"
 topic: "nlp-clasico-antes-de-deep-learning"
 year: 2001
 authors: "John Lafferty, Andrew McCallum, Fernando Pereira"
 venue: "ICML 2001"
 sourceUrl: "https://repository.upenn.edu/handle/20.500.14332/6188"
-status: "pendiente"
+status: "no leido"
 memoryCue: "Modelo discriminativo clave para etiquetar secuencias completas."
 core: false
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "CRF"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

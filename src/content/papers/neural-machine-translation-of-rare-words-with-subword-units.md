@@ -1,15 +1,14 @@
 ---
 title: "Neural Machine Translation of Rare Words with Subword Units"
-slug: "neural-machine-translation-of-rare-words-with-subword-units"
 topic: "tokenizacion-subwords"
 year: 2016
 authors: "Rico Sennrich, Barry Haddow, Alexandra Birch"
 venue: "ACL 2016"
 sourceUrl: "https://aclanthology.org/P16-1162/"
-status: "pendiente"
+status: "no leido"
 memoryCue: "BPE/subwords para resolver rare words en traduccion neural."
 core: true
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "BPE"
   - "subwords"
@@ -17,24 +16,24 @@ keywords:
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

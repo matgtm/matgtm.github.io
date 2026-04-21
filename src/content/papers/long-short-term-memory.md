@@ -1,39 +1,38 @@
 ---
 title: "Long Short-Term Memory"
-slug: "long-short-term-memory"
 topic: "rnn-lstm-secuencias"
 year: 1997
 authors: "Sepp Hochreiter, Jurgen Schmidhuber"
 venue: "Neural Computation, 1997"
 sourceUrl: "https://direct.mit.edu/neco/article/9/8/1735/6109/Long-Short-Term-Memory"
-status: "pendiente"
+status: "no leido"
 memoryCue: "LSTM: memoria con compuertas para dependencias largas."
 core: true
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "LSTM"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

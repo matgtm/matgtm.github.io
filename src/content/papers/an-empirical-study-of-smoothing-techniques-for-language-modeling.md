@@ -1,39 +1,38 @@
 ---
 title: "An Empirical Study of Smoothing Techniques for Language Modeling"
-slug: "an-empirical-study-of-smoothing-techniques-for-language-modeling"
 topic: "nlp-clasico-antes-de-deep-learning"
 year: 1999
 authors: "Stanley F. Chen, Joshua Goodman"
 venue: "Computer Speech and Language, 1999"
 sourceUrl: "https://www.sciencedirect.com/science/article/pii/S0885230899901286"
-status: "pendiente"
+status: "no leido"
 memoryCue: "La comparacion clasica de smoothing para language modeling."
 core: false
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "smoothing"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

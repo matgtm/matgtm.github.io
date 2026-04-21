@@ -1,39 +1,38 @@
 ---
 title: "Self-Consistency Improves Chain of Thought Reasoning in Language Models"
-slug: "self-consistency-improves-chain-of-thought-reasoning-in-language-models"
 topic: "reasoning-prompting"
 year: 2022
 authors: "Xuezhi Wang et al."
 venue: "ICLR 2023"
 sourceUrl: "https://research.google/pubs/self-consistency-improves-chain-of-thought-reasoning-in-language-models/"
-status: "pendiente"
+status: "no leido"
 memoryCue: "Varias cadenas de razonamiento y voto/agregacion."
 core: false
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "self-consistency"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

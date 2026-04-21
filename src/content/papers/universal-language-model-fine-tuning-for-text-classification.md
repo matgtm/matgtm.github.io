@@ -1,39 +1,38 @@
 ---
 title: "Universal Language Model Fine-tuning for Text Classification"
-slug: "universal-language-model-fine-tuning-for-text-classification"
 topic: "transformer-y-embeddings-contextuales"
 year: 2018
 authors: "Jeremy Howard, Sebastian Ruder"
 venue: "ACL 2018"
 sourceUrl: "https://aclanthology.org/P18-1031/"
-status: "pendiente"
+status: "no leido"
 memoryCue: "ULMFiT: receta practica de pretraining y fine-tuning."
 core: false
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "ULMFiT"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

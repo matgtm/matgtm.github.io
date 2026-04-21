@@ -1,15 +1,14 @@
 ---
 title: "Language Models are Few-Shot Learners"
-slug: "language-models-are-few-shot-learners"
 topic: "gpt-llms-modernos"
 year: 2020
 authors: "Tom Brown et al."
 venue: "NeurIPS 2020"
 sourceUrl: "https://proceedings.neurips.cc/paper/2020/hash/1457c0d6bfcb4967418bfb8ac142f64a-Abstract.html"
-status: "pendiente"
+status: "no leido"
 memoryCue: "GPT-3: in-context learning y few-shot prompting."
 core: true
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "GPT-3"
   - "few-shot"
@@ -17,24 +16,24 @@ keywords:
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

@@ -1,39 +1,38 @@
 ---
 title: "Natural Language Processing (Almost) from Scratch"
-slug: "natural-language-processing-almost-from-scratch"
 topic: "rnn-lstm-secuencias"
 year: 2011
 authors: "Ronan Collobert, Jason Weston, Leon Bottou, Michael Karlen, Koray Kavukcuoglu, Pavel Kuksa"
 venue: "JMLR 2011"
 sourceUrl: "https://jmlr.org/papers/v12/collobert11a.html"
-status: "pendiente"
+status: "no leido"
 memoryCue: "El giro neural temprano: menos features manuales, mas representaciones aprendidas."
 core: false
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "deep NLP temprano"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

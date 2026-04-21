@@ -24,10 +24,23 @@ npm run dev
 
 ## Campos utiles por paper
 
-- `status`: `pendiente`, `en progreso`, `leido` o `listo`.
-- `writtenBy`: `sin completar`, `humano`, `codex` o `mixto`.
-- `core`: `true` marca un paper como parte del nucleo posta.
+- `status`: `no leido`, `en progreso`, `leido` o `listo`.
+- `writtenBy`: `humano`, `codex` o `mixto` cuando toda la ficha tenga una voz clara.
+- `sectionAuthors`: permite marcar secciones puntuales, por ejemplo `resumen: humano` o `metodo: codex`.
+- `core`: `true` muestra la marca visual `Clave`.
 - `memoryCue`: frase corta que aparece debajo del titulo en las tablas.
+
+Ejemplo para una ficha donde vos escribiste las primeras secciones y Codex completo el resto:
+
+```yaml
+sectionAuthors:
+  resumen: humano
+  que-aporta: humano
+  que-problema-resuelve: codex
+  metodo: codex
+  dataset-y-evaluacion: codex
+  que-me-llamo-la-atencion: codex
+```
 
 ## Publicacion
 

@@ -1,39 +1,38 @@
 ---
 title: "Deep Contextualized Word Representations"
-slug: "deep-contextualized-word-representations"
 topic: "transformer-y-embeddings-contextuales"
 year: 2018
 authors: "Matthew E. Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, Luke Zettlemoyer"
 venue: "NAACL 2018"
 sourceUrl: "https://aclanthology.org/N18-1202/"
-status: "pendiente"
+status: "no leido"
 memoryCue: "ELMo: embeddings que cambian segun contexto."
 core: true
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "ELMo"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

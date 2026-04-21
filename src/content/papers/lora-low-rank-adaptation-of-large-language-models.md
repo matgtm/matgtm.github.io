@@ -1,15 +1,14 @@
 ---
 title: "LoRA: Low-Rank Adaptation of Large Language Models"
-slug: "lora-low-rank-adaptation-of-large-language-models"
 topic: "fine-tuning-instruction-tuning-alignment"
 year: 2021
 authors: "Edward J. Hu et al."
 venue: "ICLR 2022"
 sourceUrl: "https://openreview.net/forum?id=nZeVKeeFYf9"
-status: "pendiente"
+status: "no leido"
 memoryCue: "Fine-tuning eficiente con adaptadores low-rank."
 core: true
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "LoRA"
   - "PEFT"
@@ -17,24 +16,24 @@ keywords:
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

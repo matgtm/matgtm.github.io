@@ -4,14 +4,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { TOPICS, TOPIC_LABELS } from "../lib/topics";
 
 const STATUS_LABELS = {
-  pendiente: "Pendiente",
+  "no leido": "No leido",
   "en progreso": "En progreso",
   leido: "Leido",
   listo: "Ficha lista"
 };
 
 const AUTHOR_LABELS = {
-  "sin completar": "Sin completar",
   humano: "Humano",
   codex: "Codex",
   mixto: "Mixto"
@@ -64,8 +63,8 @@ const readPapers = papers.filter((paper) => ["leido", "listo"].includes(paper.da
             <dd>{readPapers} leidos</dd>
           </div>
           <div>
-            <dt>Nucleo</dt>
-            <dd>{corePapers} posta</dd>
+            <dt>Clave</dt>
+            <dd>{corePapers}</dd>
           </div>
         </dl>
       </aside>
@@ -74,20 +73,20 @@ const readPapers = papers.filter((paper) => ["leido", "listo"].includes(paper.da
     <section class="legend-card" aria-labelledby="legend-title">
       <div class="legend-copy">
         <p class="eyebrow">Codigo de lectura</p>
-        <h2 id="legend-title">Marcas rapidas para estudiar y saber de donde viene cada ficha.</h2>
+        <h2 id="legend-title">Marcas rapidas para estudiar y reconocer quien escribio cada parte.</h2>
       </div>
       <div class="legend-items">
         <div class="legend-sample voice-human">
           <span>Humano</span>
-          <p>Escrito por vos: lectura propia, intuiciones y asociaciones personales.</p>
+          <p>Tu voz: mas organica, con lectura propia, intuiciones y asociaciones personales.</p>
         </div>
         <div class="legend-sample voice-codex">
           <span>Codex</span>
-          <p>Escrito por Codex: ayuda sintetica, para revisar y ajustar con criterio.</p>
+          <p>Mi voz: mas mecanica, azulada y facil de auditar antes de confiar.</p>
         </div>
         <div class="legend-sample core-sample">
-          <span>Nucleo posta</span>
-          <p>Paper fundamental para priorizar si estas estudiando contra reloj.</p>
+          <span><span class="key-dot" aria-hidden="true"></span>Clave</span>
+          <p>El punto dorado marca papers que conviene priorizar si estas estudiando contra reloj.</p>
         </div>
       </div>
     </section>
@@ -103,7 +102,7 @@ const readPapers = papers.filter((paper) => ["leido", "listo"].includes(paper.da
           <span>Estado</span>
           <select id="status-filter">
             <option value="">Todos</option>
-            <option value="pendiente">Pendiente</option>
+            <option value="no leido">No leido</option>
             <option value="en progreso">En progreso</option>
             <option value="leido">Leido</option>
             <option value="listo">Ficha lista</option>
@@ -119,10 +118,10 @@ const readPapers = papers.filter((paper) => ["leido", "listo"].includes(paper.da
         </label>
 
         <label class="control">
-          <span>Nucleo</span>
+          <span>Clave</span>
           <select id="core-filter">
             <option value="">Todos</option>
-            <option value="true">Solo nucleo posta</option>
+            <option value="true">Solo clave</option>
           </select>
         </label>
       </div>
@@ -175,16 +174,20 @@ const readPapers = papers.filter((paper) => ["leido", "listo"].includes(paper.da
                   >
                     <td>
                       <div class="paper-title-wrap">
-                        <a class="paper-link" href={`/papers/${paper.slug}/`}>
-                          {paper.data.title}
-                        </a>
+                        <div class="paper-title-line">
+                          {paper.data.core && <span class="key-dot" title="Clave" aria-label="Clave"></span>}
+                          <a class="paper-link" href={`/papers/${paper.slug}/`}>
+                            {paper.data.title}
+                          </a>
+                        </div>
                         <p>{paper.data.memoryCue}</p>
-                        <div class="paper-flags">
-                          {paper.data.core && <span class="core-chip">Nucleo posta</span>}
+                        {paper.data.writtenBy && (
+                          <div class="paper-flags">
                           <span class={`author-chip author-${toClassName(paper.data.writtenBy)}`}>
                             {AUTHOR_LABELS[paper.data.writtenBy]}
                           </span>
-                        </div>
+                          </div>
+                        )}
                       </div>
                     </td>
                     <td>{paper.data.year}</td>

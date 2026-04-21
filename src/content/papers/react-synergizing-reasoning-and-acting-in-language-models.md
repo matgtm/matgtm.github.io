@@ -1,39 +1,38 @@
 ---
 title: "ReAct: Synergizing Reasoning and Acting in Language Models"
-slug: "react-synergizing-reasoning-and-acting-in-language-models"
 topic: "reasoning-prompting"
 year: 2022
 authors: "Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, Yuan Cao"
 venue: "ICLR 2023"
 sourceUrl: "https://arxiv.org/abs/2210.03629"
-status: "pendiente"
+status: "no leido"
 memoryCue: "Razonar y actuar: pensamientos mas acciones con herramientas."
 core: false
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "ReAct"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.

@@ -1,39 +1,38 @@
 ---
 title: "Large Language Models are Zero-Shot Reasoners"
-slug: "large-language-models-are-zero-shot-reasoners"
 topic: "reasoning-prompting"
 year: 2022
 authors: "Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, Yusuke Iwasawa"
 venue: "NeurIPS 2022"
 sourceUrl: "https://openreview.net/forum?id=e2TBb5y0yFf"
-status: "pendiente"
+status: "no leido"
 memoryCue: "Zero-shot CoT: el disparador minimo tipo pensemos paso a paso."
 core: false
-writtenBy: "sin completar"
+sectionAuthors: {}
 keywords:
   - "zero-shot CoT"
 ---
 
 ## Resumen
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que aporta
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que problema resuelve
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Metodo
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Dataset y evaluacion
 
-Pendiente de completar.
+Completar esta seccion.
 
 ## Que me llamo la atencion
 
-Pendiente de completar.
+Completar esta seccion.
