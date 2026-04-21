@@ -7,6 +7,9 @@ authors: "Tomas Mikolov, Kai Chen, Greg Corrado, Jeffrey Dean"
 venue: "arXiv 2013"
 sourceUrl: "https://arxiv.org/abs/1301.3781"
 status: "pendiente"
+memoryCue: "word2vec: embeddings densos con CBOW y skip-gram."
+core: true
+writtenBy: "sin completar"
 keywords:
   - "word2vec"
 ---

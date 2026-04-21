@@ -7,6 +7,9 @@ authors: "Rafael Rafailov, Archit Sharma, Eric Mitchell, Christopher D. Manning,
 venue: "NeurIPS 2023"
 sourceUrl: "https://proceedings.neurips.cc/paper_files/paper/2023/hash/a85b405ed65c6477a4fe8302b5e06ce7-Abstract-Conference.html"
 status: "pendiente"
+memoryCue: "DPO: optimizar preferencias sin RLHF clasico explicito."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "DPO"
 ---

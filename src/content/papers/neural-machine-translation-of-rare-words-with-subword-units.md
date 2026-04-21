@@ -7,6 +7,9 @@ authors: "Rico Sennrich, Barry Haddow, Alexandra Birch"
 venue: "ACL 2016"
 sourceUrl: "https://aclanthology.org/P16-1162/"
 status: "pendiente"
+memoryCue: "BPE/subwords para resolver rare words en traduccion neural."
+core: true
+writtenBy: "sin completar"
 keywords:
   - "BPE"
   - "subwords"

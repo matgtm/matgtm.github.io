@@ -7,6 +7,9 @@ authors: "Jason Wei et al."
 venue: "NeurIPS 2022"
 sourceUrl: "https://arxiv.org/abs/2201.11903"
 status: "pendiente"
+memoryCue: "CoT: pedir razonamiento paso a paso cambia el rendimiento."
+core: true
+writtenBy: "sin completar"
 keywords:
   - "CoT"
 ---

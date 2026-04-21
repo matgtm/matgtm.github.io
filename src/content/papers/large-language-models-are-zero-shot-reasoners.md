@@ -7,6 +7,9 @@ authors: "Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, Yusuke 
 venue: "NeurIPS 2022"
 sourceUrl: "https://openreview.net/forum?id=e2TBb5y0yFf"
 status: "pendiente"
+memoryCue: "Zero-shot CoT: el disparador minimo tipo pensemos paso a paso."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "zero-shot CoT"
 ---

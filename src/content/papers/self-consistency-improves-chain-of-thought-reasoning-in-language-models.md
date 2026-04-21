@@ -7,6 +7,9 @@ authors: "Xuezhi Wang et al."
 venue: "ICLR 2023"
 sourceUrl: "https://research.google/pubs/self-consistency-improves-chain-of-thought-reasoning-in-language-models/"
 status: "pendiente"
+memoryCue: "Varias cadenas de razonamiento y voto/agregacion."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "self-consistency"
 ---

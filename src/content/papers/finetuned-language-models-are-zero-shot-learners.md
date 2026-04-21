@@ -7,6 +7,9 @@ authors: "Jason Wei et al."
 venue: "ICLR 2022"
 sourceUrl: "https://openreview.net/forum?id=gEZrGCozdqR"
 status: "pendiente"
+memoryCue: "FLAN: instruction tuning para mejorar zero-shot."
+core: true
+writtenBy: "sin completar"
 keywords:
   - "FLAN"
 ---

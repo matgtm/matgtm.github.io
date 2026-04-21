@@ -3,6 +3,22 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { TOPICS, TOPIC_LABELS } from "../lib/topics";
 
+const STATUS_LABELS = {
+  pendiente: "Pendiente",
+  "en progreso": "En progreso",
+  leido: "Leido",
+  listo: "Ficha lista"
+};
+
+const AUTHOR_LABELS = {
+  "sin completar": "Sin completar",
+  humano: "Humano",
+  codex: "Codex",
+  mixto: "Mixto"
+};
+
+const toClassName = (value: string) => value.replaceAll(" ", "-");
+
 const papers = (await getCollection("papers")).sort((a, b) => {
   const topicA = TOPIC_LABELS[a.data.topic]?.index ?? 0;
   const topicB = TOPIC_LABELS[b.data.topic]?.index ?? 0;
@@ -16,6 +32,8 @@ const grouped = TOPICS.map((topic) => ({
 }));
 
 const totalPapers = papers.length;
+const corePapers = papers.filter((paper) => paper.data.core).length;
+const readPapers = papers.filter((paper) => ["leido", "listo"].includes(paper.data.status)).length;
 ---
 
 <BaseLayout title="Papers Fundamentales de NLP">
@@ -43,10 +61,35 @@ const totalPapers = papers.length;
           </div>
           <div>
             <dt>Estado</dt>
-            <dd>Todo en pendiente</dd>
+            <dd>{readPapers} leidos</dd>
+          </div>
+          <div>
+            <dt>Nucleo</dt>
+            <dd>{corePapers} posta</dd>
           </div>
         </dl>
       </aside>
+    </section>
+
+    <section class="legend-card" aria-labelledby="legend-title">
+      <div class="legend-copy">
+        <p class="eyebrow">Codigo de lectura</p>
+        <h2 id="legend-title">Marcas rapidas para estudiar y saber de donde viene cada ficha.</h2>
+      </div>
+      <div class="legend-items">
+        <div class="legend-sample voice-human">
+          <span>Humano</span>
+          <p>Escrito por vos: lectura propia, intuiciones y asociaciones personales.</p>
+        </div>
+        <div class="legend-sample voice-codex">
+          <span>Codex</span>
+          <p>Escrito por Codex: ayuda sintetica, para revisar y ajustar con criterio.</p>
+        </div>
+        <div class="legend-sample core-sample">
+          <span>Nucleo posta</span>
+          <p>Paper fundamental para priorizar si estas estudiando contra reloj.</p>
+        </div>
+      </div>
     </section>
 
     <section class="controls">
@@ -62,7 +105,8 @@ const totalPapers = papers.length;
             <option value="">Todos</option>
             <option value="pendiente">Pendiente</option>
             <option value="en progreso">En progreso</option>
-            <option value="listo">Listo</option>
+            <option value="leido">Leido</option>
+            <option value="listo">Ficha lista</option>
           </select>
         </label>
 
@@ -71,6 +115,14 @@ const totalPapers = papers.length;
           <select id="topic-filter">
             <option value="">Todos</option>
             {TOPICS.map((topic) => <option value={topic.id}>{topic.shortLabel}</option>)}
+          </select>
+        </label>
+
+        <label class="control">
+          <span>Nucleo</span>
+          <select id="core-filter">
+            <option value="">Todos</option>
+            <option value="true">Solo nucleo posta</option>
           </select>
         </label>
       </div>
@@ -113,19 +165,26 @@ const totalPapers = papers.length;
               <tbody>
                 {topic.papers.map((paper) => (
                   <tr
-                    class="paper-row"
                     data-topic={paper.data.topic}
                     data-status={paper.data.status}
                     data-title={paper.data.title}
-                    data-keywords={paper.data.keywords.join(" ")}
+                    data-keywords={[paper.data.keywords.join(" "), paper.data.memoryCue, paper.data.authors].join(" ")}
                     data-topic-label={topic.label}
+                    data-core={String(paper.data.core)}
+                    class:list={["paper-row", paper.data.core && "is-core"]}
                   >
                     <td>
                       <div class="paper-title-wrap">
                         <a class="paper-link" href={`/papers/${paper.slug}/`}>
                           {paper.data.title}
                         </a>
-                        <p>{paper.data.authors}</p>
+                        <p>{paper.data.memoryCue}</p>
+                        <div class="paper-flags">
+                          {paper.data.core && <span class="core-chip">Nucleo posta</span>}
+                          <span class={`author-chip author-${toClassName(paper.data.writtenBy)}`}>
+                            {AUTHOR_LABELS[paper.data.writtenBy]}
+                          </span>
+                        </div>
                       </div>
                     </td>
                     <td>{paper.data.year}</td>
@@ -135,8 +194,8 @@ const totalPapers = papers.length;
                       </a>
                     </td>
                     <td>
-                      <span class={`status-badge status-${paper.data.status.replace(" ", "-")}`}>
-                        {paper.data.status}
+                      <span class={`status-badge status-${toClassName(paper.data.status)}`}>
+                        {STATUS_LABELS[paper.data.status]}
                       </span>
                     </td>
                     <td>
@@ -163,6 +222,7 @@ const totalPapers = papers.length;
     const searchInput = document.querySelector("#search-input");
     const statusFilter = document.querySelector("#status-filter");
     const topicFilter = document.querySelector("#topic-filter");
+    const coreFilter = document.querySelector("#core-filter");
     const rows = [...document.querySelectorAll(".paper-row")];
     const sections = [...document.querySelectorAll("[data-topic-section]")];
     const emptyState = document.querySelector("#empty-state");
@@ -171,6 +231,7 @@ const totalPapers = papers.length;
       const query = normalize(searchInput?.value ?? "");
       const status = statusFilter?.value ?? "";
       const topic = topicFilter?.value ?? "";
+      const core = coreFilter?.value ?? "";
 
       let visibleCount = 0;
 
@@ -181,7 +242,8 @@ const totalPapers = papers.length;
         const matchesQuery = !query || haystack.includes(query);
         const matchesStatus = !status || row.dataset.status === status;
         const matchesTopic = !topic || row.dataset.topic === topic;
-        const visible = matchesQuery && matchesStatus && matchesTopic;
+        const matchesCore = !core || row.dataset.core === core;
+        const visible = matchesQuery && matchesStatus && matchesTopic && matchesCore;
 
         row.toggleAttribute("hidden", !visible);
         if (visible) visibleCount += 1;
@@ -195,10 +257,10 @@ const totalPapers = papers.length;
       emptyState?.toggleAttribute("hidden", visibleCount !== 0);
     };
 
-    [searchInput, statusFilter, topicFilter].forEach((node) =>
+    [searchInput, statusFilter, topicFilter, coreFilter].forEach((node) =>
       node?.addEventListener("input", applyFilters)
     );
-    [statusFilter, topicFilter].forEach((node) =>
+    [statusFilter, topicFilter, coreFilter].forEach((node) =>
       node?.addEventListener("change", applyFilters)
     );
   </script>

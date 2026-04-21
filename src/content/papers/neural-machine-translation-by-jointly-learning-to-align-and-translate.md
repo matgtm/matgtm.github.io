@@ -7,6 +7,9 @@ authors: "Dzmitry Bahdanau, Kyunghyun Cho, Yoshua Bengio"
 venue: "arXiv 2014"
 sourceUrl: "https://arxiv.org/abs/1409.0473"
 status: "pendiente"
+memoryCue: "Paper que introduce attention para alinear al traducir."
+core: true
+writtenBy: "sin completar"
 keywords:
   - "attention"
 ---

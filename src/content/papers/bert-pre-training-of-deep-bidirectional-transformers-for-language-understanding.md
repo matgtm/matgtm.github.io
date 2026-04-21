@@ -7,6 +7,9 @@ authors: "Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova"
 venue: "NAACL 2019"
 sourceUrl: "https://aclanthology.org/N19-1423/"
 status: "pendiente"
+memoryCue: "BERT: Transformer bidireccional con masked language modeling."
+core: true
+writtenBy: "sin completar"
 keywords:
   - "BERT"
 ---

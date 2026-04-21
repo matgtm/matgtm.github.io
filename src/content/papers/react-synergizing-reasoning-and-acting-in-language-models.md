@@ -7,6 +7,9 @@ authors: "Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Nara
 venue: "ICLR 2023"
 sourceUrl: "https://arxiv.org/abs/2210.03629"
 status: "pendiente"
+memoryCue: "Razonar y actuar: pensamientos mas acciones con herramientas."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "ReAct"
 ---

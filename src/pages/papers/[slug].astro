@@ -15,6 +15,22 @@ export async function getStaticPaths() {
 const { paper } = Astro.props;
 const { Content } = await render(paper);
 const topic = TOPIC_LABELS[paper.data.topic];
+
+const STATUS_LABELS = {
+  pendiente: "Pendiente",
+  "en progreso": "En progreso",
+  leido: "Leido",
+  listo: "Ficha lista"
+};
+
+const AUTHOR_LABELS = {
+  "sin completar": "Sin completar",
+  humano: "Humano",
+  codex: "Codex",
+  mixto: "Mixto"
+};
+
+const toClassName = (value: string) => value.replaceAll(" ", "-");
 ---
 
 <BaseLayout title={`${paper.data.title} | Papers Fundamentales de NLP`}>
@@ -25,7 +41,13 @@ const topic = TOPIC_LABELS[paper.data.topic];
       <div class="paper-hero-copy">
         <p class="eyebrow">{topic?.label}</p>
         <h1>{paper.data.title}</h1>
-        <p class="paper-hero-text">{paper.data.authors}</p>
+        <p class="paper-hero-text">{paper.data.memoryCue}</p>
+        <div class="paper-flags">
+          {paper.data.core && <span class="core-chip">Nucleo posta</span>}
+          <span class={`author-chip author-${toClassName(paper.data.writtenBy)}`}>
+            {AUTHOR_LABELS[paper.data.writtenBy]}
+          </span>
+        </div>
       </div>
 
       <aside class="paper-meta">
@@ -39,7 +61,15 @@ const topic = TOPIC_LABELS[paper.data.topic];
         </div>
         <div>
           <span>Estado</span>
-          <strong>{paper.data.status}</strong>
+          <strong>{STATUS_LABELS[paper.data.status]}</strong>
+        </div>
+        <div>
+          <span>Autores</span>
+          <strong>{paper.data.authors}</strong>
+        </div>
+        <div>
+          <span>Autoria de la ficha</span>
+          <strong>{AUTHOR_LABELS[paper.data.writtenBy]}</strong>
         </div>
         <div>
           <span>Keywords</span>

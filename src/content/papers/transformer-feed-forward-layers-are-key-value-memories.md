@@ -7,6 +7,9 @@ authors: "Mor Geva, Roei Schuster, Jonathan Berant, Omer Levy"
 venue: "EMNLP 2021"
 sourceUrl: "https://aclanthology.org/2021.emnlp-main.446/"
 status: "pendiente"
+memoryCue: "FFN como memorias key-value dentro del Transformer."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "FFN as memory"
 ---

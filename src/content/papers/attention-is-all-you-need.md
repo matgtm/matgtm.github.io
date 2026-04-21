@@ -7,6 +7,9 @@ authors: "Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jone
 venue: "NeurIPS 2017"
 sourceUrl: "https://papers.nips.cc/paper/7181-attention-is-all-you-need"
 status: "pendiente"
+memoryCue: "Transformer: atencion sin recurrencia ni convoluciones."
+core: true
+writtenBy: "sin completar"
 keywords:
   - "Transformer"
 ---

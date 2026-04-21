@@ -7,6 +7,9 @@ authors: "Ilya Sutskever, Oriol Vinyals, Quoc V. Le"
 venue: "NeurIPS 2014"
 sourceUrl: "https://papers.nips.cc/paper/5346-sequence-to-sequence-learning-with-neural"
 status: "pendiente"
+memoryCue: "Encoder-decoder con LSTM para mapear secuencias a secuencias."
+core: true
+writtenBy: "sin completar"
 keywords:
   - "seq2seq"
 ---

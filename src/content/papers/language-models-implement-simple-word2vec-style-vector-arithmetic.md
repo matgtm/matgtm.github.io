@@ -7,6 +7,9 @@ authors: "Jack Merullo, Carsten Eickhoff, Ellie Pavlick"
 venue: "Conference paper / arXiv"
 sourceUrl: "https://arxiv.org/abs/2305.16130"
 status: "pendiente"
+memoryCue: "Puente entre aritmetica vectorial word2vec y LLMs."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "vector arithmetic"
 ---

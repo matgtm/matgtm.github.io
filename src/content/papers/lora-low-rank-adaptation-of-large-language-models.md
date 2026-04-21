@@ -7,6 +7,9 @@ authors: "Edward J. Hu et al."
 venue: "ICLR 2022"
 sourceUrl: "https://openreview.net/forum?id=nZeVKeeFYf9"
 status: "pendiente"
+memoryCue: "Fine-tuning eficiente con adaptadores low-rank."
+core: true
+writtenBy: "sin completar"
 keywords:
   - "LoRA"
   - "PEFT"

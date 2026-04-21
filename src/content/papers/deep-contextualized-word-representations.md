@@ -7,6 +7,9 @@ authors: "Matthew E. Peters, Mark Neumann, Mohit Iyyer, Matt Gardner, Christophe
 venue: "NAACL 2018"
 sourceUrl: "https://aclanthology.org/N18-1202/"
 status: "pendiente"
+memoryCue: "ELMo: embeddings que cambian segun contexto."
+core: true
+writtenBy: "sin completar"
 keywords:
   - "ELMo"
 ---

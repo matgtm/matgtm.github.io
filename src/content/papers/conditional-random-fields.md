@@ -7,6 +7,9 @@ authors: "John Lafferty, Andrew McCallum, Fernando Pereira"
 venue: "ICML 2001"
 sourceUrl: "https://repository.upenn.edu/handle/20.500.14332/6188"
 status: "pendiente"
+memoryCue: "Modelo discriminativo clave para etiquetar secuencias completas."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "CRF"
 ---

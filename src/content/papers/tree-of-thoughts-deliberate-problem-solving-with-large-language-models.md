@@ -7,6 +7,9 @@ authors: "Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Shafran, Thomas L. Griffiths,
 venue: "NeurIPS 2023"
 sourceUrl: "https://arxiv.org/abs/2305.10601"
 status: "pendiente"
+memoryCue: "Explorar ramas de razonamiento en vez de una sola cadena."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "ToT"
 ---

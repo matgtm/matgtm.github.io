@@ -7,6 +7,9 @@ authors: "John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, Oleg Kli
 venue: "arXiv 2017"
 sourceUrl: "https://arxiv.org/abs/1707.06347"
 status: "pendiente"
+memoryCue: "PPO: algoritmo de RL usado como pieza en pipelines RLHF."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "PPO"
 ---

@@ -7,6 +7,9 @@ authors: "Kishore Papineni, Salim Roukos, Todd Ward, Wei-Jing Zhu"
 venue: "ACL 2002"
 sourceUrl: "https://aclanthology.org/P02-1040/"
 status: "pendiente"
+memoryCue: "La metrica historica que automatiza evaluacion de traduccion."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "BLEU"
 ---

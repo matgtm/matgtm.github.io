@@ -7,6 +7,9 @@ authors: "Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya 
 venue: "OpenAI Technical Report, 2019"
 sourceUrl: "https://cdn.openai.com/better-language-models/language-models.pdf"
 status: "pendiente"
+memoryCue: "GPT-2: escala autoregresiva y comportamiento multitarea zero-shot."
+core: true
+writtenBy: "sin completar"
 keywords:
   - "GPT-2"
 ---

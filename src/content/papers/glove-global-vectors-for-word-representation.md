@@ -7,6 +7,9 @@ authors: "Jeffrey Pennington, Richard Socher, Christopher Manning"
 venue: "EMNLP 2014"
 sourceUrl: "https://aclanthology.org/D14-1162/"
 status: "pendiente"
+memoryCue: "Embeddings desde co-ocurrencias globales y ratios semanticos."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "GloVe"
 ---

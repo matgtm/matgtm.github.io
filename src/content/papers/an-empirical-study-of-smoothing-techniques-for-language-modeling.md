@@ -7,6 +7,9 @@ authors: "Stanley F. Chen, Joshua Goodman"
 venue: "Computer Speech and Language, 1999"
 sourceUrl: "https://www.sciencedirect.com/science/article/pii/S0885230899901286"
 status: "pendiente"
+memoryCue: "La comparacion clasica de smoothing para language modeling."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "smoothing"
 ---

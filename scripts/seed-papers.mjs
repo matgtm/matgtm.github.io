@@ -191,6 +191,93 @@ const METADATA = {
   }
 };
 
+const CORE_TITLES = new Set([
+  "Efficient Estimation of Word Representations in Vector Space",
+  "Long Short-Term Memory",
+  "Sequence to Sequence Learning with Neural Networks",
+  "Neural Machine Translation by Jointly Learning to Align and Translate",
+  "Neural Machine Translation of Rare Words with Subword Units",
+  "Attention Is All You Need",
+  "Deep Contextualized Word Representations",
+  "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+  "Improving Language Understanding by Generative Pre-Training",
+  "Language Models are Unsupervised Multitask Learners",
+  "Language Models are Few-Shot Learners",
+  "Finetuned Language Models Are Zero-Shot Learners",
+  "Training language models to follow instructions with human feedback",
+  "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models",
+  "LoRA: Low-Rank Adaptation of Large Language Models"
+]);
+
+const MEMORY_CUES = {
+  "Class-Based n-gram Models of Natural Language":
+    "Clustering de palabras para hacer n-grams menos esparsos.",
+  "An Empirical Study of Smoothing Techniques for Language Modeling":
+    "La comparacion clasica de smoothing para language modeling.",
+  "Conditional Random Fields":
+    "Modelo discriminativo clave para etiquetar secuencias completas.",
+  "BLEU: a Method for Automatic Evaluation of Machine Translation":
+    "La metrica historica que automatiza evaluacion de traduccion.",
+  "Efficient Estimation of Word Representations in Vector Space":
+    "word2vec: embeddings densos con CBOW y skip-gram.",
+  "GloVe: Global Vectors for Word Representation":
+    "Embeddings desde co-ocurrencias globales y ratios semanticos.",
+  "Neural Word Embedding as Implicit Matrix Factorization":
+    "La lectura de word2vec como factorizacion matricial implicita.",
+  "Recurrent Neural Network Based Language Model":
+    "RNN aplicada al modelado de lenguaje antes del boom Transformer.",
+  "Long Short-Term Memory":
+    "LSTM: memoria con compuertas para dependencias largas.",
+  "Natural Language Processing (Almost) from Scratch":
+    "El giro neural temprano: menos features manuales, mas representaciones aprendidas.",
+  "Sequence to Sequence Learning with Neural Networks":
+    "Encoder-decoder con LSTM para mapear secuencias a secuencias.",
+  "Neural Machine Translation by Jointly Learning to Align and Translate":
+    "Paper que introduce attention para alinear al traducir.",
+  "Neural Machine Translation of Rare Words with Subword Units":
+    "BPE/subwords para resolver rare words en traduccion neural.",
+  "Attention Is All You Need":
+    "Transformer: atencion sin recurrencia ni convoluciones.",
+  "Deep Contextualized Word Representations":
+    "ELMo: embeddings que cambian segun contexto.",
+  "Universal Language Model Fine-tuning for Text Classification":
+    "ULMFiT: receta practica de pretraining y fine-tuning.",
+  "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding":
+    "BERT: Transformer bidireccional con masked language modeling.",
+  "Improving Language Understanding by Generative Pre-Training":
+    "GPT-1: pretrain generativo y fine-tuning supervisado.",
+  "Language Models are Unsupervised Multitask Learners":
+    "GPT-2: escala autoregresiva y comportamiento multitarea zero-shot.",
+  "Language Models are Few-Shot Learners":
+    "GPT-3: in-context learning y few-shot prompting.",
+  "Finetuned Language Models Are Zero-Shot Learners":
+    "FLAN: instruction tuning para mejorar zero-shot.",
+  "Training language models to follow instructions with human feedback":
+    "InstructGPT/RLHF: preferencias humanas para seguir instrucciones.",
+  "Self-Instruct: Aligning Language Models with Self-Generated Instructions":
+    "Datos sinteticos de instrucciones generadas por el propio modelo.",
+  "LoRA: Low-Rank Adaptation of Large Language Models":
+    "Fine-tuning eficiente con adaptadores low-rank.",
+  "Direct Preference Optimization: Your Language Model is Secretly a Reward Model":
+    "DPO: optimizar preferencias sin RLHF clasico explicito.",
+  "Proximal Policy Optimization Algorithms":
+    "PPO: algoritmo de RL usado como pieza en pipelines RLHF.",
+  "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models":
+    "CoT: pedir razonamiento paso a paso cambia el rendimiento.",
+  "Large Language Models are Zero-Shot Reasoners":
+    "Zero-shot CoT: el disparador minimo tipo pensemos paso a paso.",
+  "Self-Consistency Improves Chain of Thought Reasoning in Language Models":
+    "Varias cadenas de razonamiento y voto/agregacion.",
+  "ReAct: Synergizing Reasoning and Acting in Language Models":
+    "Razonar y actuar: pensamientos mas acciones con herramientas.",
+  "Tree of Thoughts: Deliberate Problem Solving with Large Language Models":
+    "Explorar ramas de razonamiento en vez de una sola cadena.",
+  "Transformer Feed-Forward Layers Are Key-Value Memories":
+    "FFN como memorias key-value dentro del Transformer.",
+  "Language Models Implement Simple Word2Vec-Style Vector Arithmetic":
+    "Puente entre aritmetica vectorial word2vec y LLMs."
+};
+
 const SECTION_TITLES = [
   "Resumen",
   "Que aporta",
@@ -273,6 +360,9 @@ const parseList = (rawText) => {
       venue: metadata.venue,
       sourceUrl: metadata.sourceUrl,
       status: "pendiente",
+      memoryCue: MEMORY_CUES[title],
+      core: CORE_TITLES.has(title),
+      writtenBy: "sin completar",
       keywords: extractKeyword(description)
     });
   }
@@ -292,7 +382,9 @@ const renderFrontmatter = (paper) => {
     paper.authors
   )}\nvenue: ${escapeYaml(paper.venue)}\nsourceUrl: ${escapeYaml(
     paper.sourceUrl
-  )}\nstatus: ${escapeYaml(paper.status)}\nkeywords:${keywords}\n---\n`;
+  )}\nstatus: ${escapeYaml(paper.status)}\nmemoryCue: ${escapeYaml(
+    paper.memoryCue
+  )}\ncore: ${paper.core}\nwrittenBy: ${escapeYaml(paper.writtenBy)}\nkeywords:${keywords}\n---\n`;
 };
 
 const source = await import("node:fs/promises").then(({ readFile }) => readFile(SOURCE_FILE, "utf8"));

@@ -7,6 +7,9 @@ authors: "Jeremy Howard, Sebastian Ruder"
 venue: "ACL 2018"
 sourceUrl: "https://aclanthology.org/P18-1031/"
 status: "pendiente"
+memoryCue: "ULMFiT: receta practica de pretraining y fine-tuning."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "ULMFiT"
 ---

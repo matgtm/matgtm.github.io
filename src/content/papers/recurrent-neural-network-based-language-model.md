@@ -7,6 +7,9 @@ authors: "Tomas Mikolov, Martin Karafiat, Lukas Burget, Jan Cernocky, Sanjeev Kh
 venue: "Interspeech 2010"
 sourceUrl: "https://www.isca-archive.org/interspeech_2010/mikolov10_interspeech.html"
 status: "pendiente"
+memoryCue: "RNN aplicada al modelado de lenguaje antes del boom Transformer."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "RNN LM"
 ---

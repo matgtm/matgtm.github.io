@@ -7,6 +7,9 @@ authors: "Ronan Collobert, Jason Weston, Leon Bottou, Michael Karlen, Koray Kavu
 venue: "JMLR 2011"
 sourceUrl: "https://jmlr.org/papers/v12/collobert11a.html"
 status: "pendiente"
+memoryCue: "El giro neural temprano: menos features manuales, mas representaciones aprendidas."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "deep NLP temprano"
 ---

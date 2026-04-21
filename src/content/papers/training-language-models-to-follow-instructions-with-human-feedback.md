@@ -7,6 +7,9 @@ authors: "Long Ouyang et al."
 venue: "arXiv 2022"
 sourceUrl: "https://arxiv.org/abs/2203.02155"
 status: "pendiente"
+memoryCue: "InstructGPT/RLHF: preferencias humanas para seguir instrucciones."
+core: true
+writtenBy: "sin completar"
 keywords:
   - "InstructGPT"
   - "RLHF"

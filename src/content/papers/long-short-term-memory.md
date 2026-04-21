@@ -7,6 +7,9 @@ authors: "Sepp Hochreiter, Jurgen Schmidhuber"
 venue: "Neural Computation, 1997"
 sourceUrl: "https://direct.mit.edu/neco/article/9/8/1735/6109/Long-Short-Term-Memory"
 status: "pendiente"
+memoryCue: "LSTM: memoria con compuertas para dependencias largas."
+core: true
+writtenBy: "sin completar"
 keywords:
   - "LSTM"
 ---

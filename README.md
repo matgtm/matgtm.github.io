@@ -22,6 +22,13 @@ npm run dev
 2. `npm run seed` genera los Markdown base en `src/content/papers`.
 3. Despues, el trabajo cotidiano se hace editando esos Markdown.
 
+## Campos utiles por paper
+
+- `status`: `pendiente`, `en progreso`, `leido` o `listo`.
+- `writtenBy`: `sin completar`, `humano`, `codex` o `mixto`.
+- `core`: `true` marca un paper como parte del nucleo posta.
+- `memoryCue`: frase corta que aparece debajo del titulo en las tablas.
+
 ## Publicacion
 
 1. Crear el repo publico `matgtm.github.io`.

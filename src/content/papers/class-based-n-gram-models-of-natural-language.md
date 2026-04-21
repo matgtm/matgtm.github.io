@@ -7,6 +7,9 @@ authors: "Peter F. Brown, Vincent J. Della Pietra, Peter V. deSouza, Jenifer C. 
 venue: "Computational Linguistics, 1992"
 sourceUrl: "https://aclanthology.org/J92-4003/"
 status: "pendiente"
+memoryCue: "Clustering de palabras para hacer n-grams menos esparsos."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "n-grams"
 ---

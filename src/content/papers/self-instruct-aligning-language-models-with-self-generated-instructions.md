@@ -7,6 +7,9 @@ authors: "Yizhong Wang, Yeganeh Kordi, Swaroop Mishra, Alisa Liu, Noah A. Smith,
 venue: "ACL 2023"
 sourceUrl: "https://aclanthology.org/2023.acl-long.754/"
 status: "pendiente"
+memoryCue: "Datos sinteticos de instrucciones generadas por el propio modelo."
+core: false
+writtenBy: "sin completar"
 keywords:
   - "Self-Instruct"
 ---

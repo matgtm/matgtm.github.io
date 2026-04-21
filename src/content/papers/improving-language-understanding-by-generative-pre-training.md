@@ -7,6 +7,9 @@ authors: "Alec Radford, Karthik Narasimhan, Tim Salimans, Ilya Sutskever"
 venue: "OpenAI Technical Report, 2018"
 sourceUrl: "https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf"
 status: "pendiente"
+memoryCue: "GPT-1: pretrain generativo y fine-tuning supervisado."
+core: true
+writtenBy: "sin completar"
 keywords:
   - "GPT-1"
 ---
