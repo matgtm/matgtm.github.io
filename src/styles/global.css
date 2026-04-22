@@ -611,6 +611,26 @@ tbody a:focus-visible,
   border-radius: 0.35rem;
 }
 
+.paper-figure {
+  margin: 1.35rem 0 0;
+}
+
+.paper-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper-strong);
+}
+
+.paper-figure figcaption {
+  margin-top: 0.55rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
 [hidden] {
   display: none !important;
 }
