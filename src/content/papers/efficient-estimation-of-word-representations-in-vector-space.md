@@ -42,7 +42,7 @@ En skip-gram, el modelo toma una palabra central como vector one-hot. Ese vector
 
 <figure class="paper-figure">
   <img src="/images/word2vec-skipgram-loss-codex.png" alt="Apunte dibujado a mano que explica la arquitectura skip-gram de word2vec, desde el one-hot encoding hasta la loss." />
-  <figcaption>Imagen generada por Codex para clarificar la arquitectura skip-gram de word2vec.</figcaption>
+  <figcaption>Imagen generada por Codec Images v2 para clarificar la arquitectura skip-gram de word2vec.</figcaption>
 </figure>
 
 ## Dataset y evaluacion
