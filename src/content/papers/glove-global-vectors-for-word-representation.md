@@ -5,7 +5,7 @@ year: 2014
 authors: "Jeffrey Pennington, Richard Socher, Christopher Manning"
 venue: "EMNLP 2014"
 sourceUrl: "https://aclanthology.org/D14-1162/"
-status: "no leido"
+status: "leido"
 memoryCue: "Embeddings desde co-ocurrencias globales y ratios semanticos."
 core: false
 sectionAuthors:
@@ -44,7 +44,7 @@ Luego se arman dos matrices W y W_tilde, que son los parámetros que vamos a ent
 
 <figure class="paper-figure">
   <img src="/images/glove-pipeline-chalkboard-codex.png" alt="Diagrama en pizarrón que explica el pipeline general de GloVe, desde el corpus y la matriz de co-ocurrencias hasta la pérdida ponderada y los embeddings finales." />
-  <figcaption>Imagen generada por Codec Images v2 para clarificar el pipeline general del método GloVe.</figcaption>
+  <figcaption>Imagen generada por Codex Images v2 para clarificar el pipeline general del método GloVe.</figcaption>
 </figure>
 
 ## Dataset y evaluación

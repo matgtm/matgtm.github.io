@@ -9,10 +9,10 @@ status: "leido"
 memoryCue: "word2vec: embeddings densos con CBOW y skip-gram."
 core: true
 sectionAuthors:
-  resumen: humano
+  resumen: codex
   que-aporta: humano
-  que-problema-resuelve: codex
-  metodo: codex
+  que-problema-resuelve: humano
+  metodo: humano
   dataset-y-evaluacion: codex
   que-me-llamo-la-atencion: humano
 keywords:
@@ -21,7 +21,9 @@ keywords:
 
 ## Resumen
 
-Completar esta seccion.
+Este paper presenta dos arquitecturas simples para aprender representaciones densas de palabras a gran escala: CBOW y skip-gram. La idea central es abandonar modelos neuronales más pesados, con capas ocultas costosas, y quedarse con modelos log-lineales que puedan entrenarse sobre muchísimos más datos.
+
+La apuesta es pragmática: aunque el modelo individual sea más simple, la eficiencia permite usar corpus enormes y vectores de mayor dimensionalidad. Con eso, los embeddings capturan regularidades sintácticas y semánticas que después aparecen en operaciones vectoriales del tipo analogía.
 
 ## Qué aporta
 
@@ -42,12 +44,14 @@ En skip-gram, el modelo toma una palabra central como vector one-hot. Ese vector
 
 <figure class="paper-figure">
   <img src="/images/word2vec-skipgram-loss-codex.png" alt="Apunte dibujado a mano que explica la arquitectura skip-gram de word2vec, desde el one-hot encoding hasta la loss." />
-  <figcaption>Imagen generada por Codec Images v2 para clarificar la arquitectura skip-gram de word2vec.</figcaption>
+  <figcaption>Imagen generada por Codex Images v2 para clarificar la arquitectura skip-gram de word2vec.</figcaption>
 </figure>
 
-## Dataset y evaluacion
+## Dataset y evaluación
 
-Completar esta seccion.
+Usan corpus grandes, especialmente Google News, con alrededor de 6B tokens y vocabulario restringido al millón de palabras más frecuentes. También comparan arquitecturas sobre corpus LDC más chicos, de 320M palabras y 82K de vocabulario, para contrastar contra modelos anteriores como RNNLM.
+
+La evaluación principal es un test de analogías sintácticas y semánticas: dadas tres palabras, el modelo tiene que completar la cuarta usando operaciones vectoriales. El resultado importante es que CBOW y skip-gram logran buena accuracy con mucho menor costo computacional; skip-gram suele rendir mejor en semántica, mientras CBOW entrena más rápido.
 
 ## Qué me llamó la atención
 
